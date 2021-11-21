@@ -61,3 +61,8 @@ html, body {
   #btn2{
       margin-top: 20px;
   }
+
+  #myTable{
+    padding: 10;
+    margin: 10;
+  }
