@@ -6,6 +6,26 @@ var btn = document.getElementById("btn");
 var btn2 = document.getElementById("btn2");
 var contContainer = document.getElementById("contact-info");
 
+//---------------------------------------------------------------------------
+
+function viewCurrentContact() {
+  currentContact = contactArray[currentContactIndex];
+  console.log(currentContact);
+  document.getElementById("nameID").value = currentContact.preferredName;   
+  document.getElementById("emailID").value = currentContact.email;   
+  document.getElementById("cityID").value = currentContact.city;   
+  document.getElementById("stateID").value = currentContact.state;
+  document.getElementById("zipID").value = currentContact.zip;  
+
+  // Todo: Add additional fields.
+  document.getElementById("statusID").innerHTML = "Status: Viewing contact " + (currentContactIndex+1) + " of " + contactArray.length;
+}
+
+
+
+
+//----------------------------------------------------------------------------
+
 btn.addEventListener("click", function() {
     btns();
 });
