@@ -50,16 +50,19 @@
     </div>
 
     <div id="tableButtons">
-        <tr id="topButton">
-            <td><button type="button" onclick="previous()">Previous</button></td>
-            <td><button type="button" autofocus onclick="next()">Next</button>
-        </td>
-        <tr id="lowButton">
-            <td><button type="button" onclick="add()">New</button></td>
-            <td><button type="button" onclick="remove()">Delete</button>
-        </td>
-        </tr>
+        <table>
+            <tr id="topButton">
+                <td><button type="button" onclick="previous()">Previous</button></td>
+                <td><button type="button" autofocus onclick="next()">Next</button>
+            </td>
+            <tr id="lowButton">
+                <td><button type="button" onclick="add()">New</button></td>
+                <td><button type="button" onclick="remove()">Delete</button>
+            </td>
+            </tr>
+        </table>
     </div>
+
     <!------------------------------------------------------------------------------------>
     <button id="btn">Fetch Information</button>
     <div id="people-info"></div>
