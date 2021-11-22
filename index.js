@@ -38,6 +38,35 @@ function viewCurrentContact() {
 
 
 
+function callZip(){
+  getPlace();
+}
+
+
+function getPlace(){
+  var zip = document.getElementById("zipID").value
+  console.log("zip:"+zip);
+
+  console.log("function getPlace(zip) { ... }");
+  var xhr = new XMLHttpRequest();
+
+  // Register the embedded handler function
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      var result = xhr.responseText;
+      console.log("result:"+result);
+      var place = result.split(', ');
+      if (document.getElementById("cityID").value == "")
+          document.getElementById("cityID").value = place[0];
+      if (document.getElementById("stateID").value == "")
+          document.getElementById("stateID").value = place[1];
+      }
+    }
+    xhr.open("GET", "getCityState.php?zip=" + zip);
+    xhr.send(null);
+}
+
+
 
 //----------------------------------------------------------------------------
 
