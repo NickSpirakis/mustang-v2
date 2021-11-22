@@ -10,13 +10,14 @@ var contContainer = document.getElementById("contact-info");
 
 //add
 function addContact(){
-  preferedName: document.getElementById("nameID").value;   
-  email: document.getElementById("emailID").value;   
-  city: document.getElementById("cityID").value;   
-  state: document.getElementById("stateID").value;
-  zip: document.getElementById("zipID").value;  
-
-
+  var newContact = {
+    preferedName: document.getElementById("nameID").value,   
+    email: document.getElementById("emailID").value,   
+    city: document.getElementById("cityID").value,   
+    state: document.getElementById("stateID").value,
+    zip: document.getElementById("zipID").value  
+  }
+  pplContainer.insertAdjacentHTML('beforeend', newContact);
 }
 
 function viewCurrentContact() {
