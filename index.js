@@ -8,6 +8,9 @@ var contContainer = document.getElementById("contact-info");
 
 //---------------------------------------------------------------------------
 
+var contactArray = [];
+var currentContactIndex = [];
+
 //add
 function addContact(){
   var newContact = {
