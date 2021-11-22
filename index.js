@@ -6,6 +6,9 @@ var btn = document.getElementById("btn");
 var btn2 = document.getElementById("btn2");
 var contContainer = document.getElementById("contact-info");
 
+
+
+
 //---------------------------------------------------------------------------
 
 var contactArray = [];
@@ -20,12 +23,16 @@ function addContact(){
     state: document.getElementById("stateID").value,
     zip: document.getElementById("zipID").value  
   }
-  pplContainer.insertAdjacentHTML('beforeend', newContact);
+  contactArray.push(newContact);
+  currentContactIndex = currentContactIndex + 1;
+  viewCurrentContact();
+
+  //pplContainer.insertAdjacentHTML('beforeend', newContact);
 }
 
 function viewCurrentContact() {
 
-  var htmlString = "";
+  //var htmlString = "";
 
   currentContact = contactArray[currentContactIndex];
   console.log(currentContact);
@@ -33,14 +40,32 @@ function viewCurrentContact() {
   document.getElementById("emailID").value = currentContact.email;   
   document.getElementById("cityID").value = currentContact.city;   
   document.getElementById("stateID").value = currentContact.state;
-  document.getElementById("zipID").value = currentContact.zip;  
-
-  // Todo: Add additional fields.
-  
+  document.getElementById("zipID").value = currentContact.zip;   
   document.getElementById("statusID").innerHTML = "Status: Viewing contact " + (currentContactIndex+1) + " of " + contactArray.length;
 
-  pplContainer.insertAdjacentHTML('beforeend', htmlString);
+  //pplContainer.insertAdjacentHTML('beforeend', htmlString);
 }
+
+
+
+
+function previous() {
+  if (currentContactIndex > 0) {
+      currentContactIndex--;
+  }
+  currentContact = contactArray[currentContactIndex];
+  viewCurrentContact();
+}
+
+function next() {
+  if (currentContactIndex < (contactArray.length-1)) {
+      currentContactIndex++;
+  }
+  currentContact = contactArray[currentContactIndex];
+  viewCurrentContact();
+  console.log(contactArray);
+}
+
 
 
 
@@ -77,6 +102,9 @@ function keyPressed() {
 
     // This type of function should be useful in search as it implements keyPressed.
 }
+
+
+
 
 //----------------------------------------------------------------------------
 
