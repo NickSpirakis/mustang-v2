@@ -16,7 +16,7 @@ var currentContactIndex = 0;
 
 //add
 function addContact(){
-  console.log('addContact() running');
+  console.log("addContact() running");
   var newContact = {
     preferredName  : document.getElementById("nameID").value,   
     email : document.getElementById("emailID").value,   
@@ -31,6 +31,15 @@ function addContact(){
   viewCurrentContact();
 
   //pplContainer.insertAdjacentHTML('beforeend', newContact);
+}
+
+function remove(){
+  console.log("removeContact() Running");
+  if (contactArray.length > 1){
+    contactArray = contactArray.splice(currentContactIndex,1);
+  }
+  console.log(contactArray);
+  viewCurrentContact();
 }
 
 function viewCurrentContact() {
