@@ -12,7 +12,7 @@ var contContainer = document.getElementById("contact-info");
 //---------------------------------------------------------------------------
 
 var contactArray = [];
-var currentContactIndex = [];
+var currentContactIndex = 0;
 
 //add
 function addContact(){
@@ -23,17 +23,16 @@ function addContact(){
     state : document.getElementById("stateID").value,
     zip : document.getElementById("zipID").value  
   }
-  //contactArray.push(newContact);
-  currentContactIndex.push(newContact);
+  contactArray.push(newContact);
+  //currentContactIndex.push(newContact);
   currentContactIndex = currentContactIndex + 1;
+  console.log(contactArray);
   viewCurrentContact();
 
   //pplContainer.insertAdjacentHTML('beforeend', newContact);
 }
 
 function viewCurrentContact() {
-
-  //var htmlString = "";
 
   currentContact = contactArray[currentContactIndex];
   console.log(currentContact);
@@ -44,7 +43,6 @@ function viewCurrentContact() {
   document.getElementById("zipID").value = currentContact.zip;   
   document.getElementById("statusID").innerHTML = "Status: Viewing contact " + (currentContactIndex+1) + " of " + contactArray.length;
 
-  //pplContainer.insertAdjacentHTML('beforeend', htmlString);
 }
 
 
