@@ -17,11 +17,11 @@ var currentContactIndex = [];
 //add
 function addContact(){
   var newContact = {
-    preferedName: document.getElementById("nameID").value,   
-    email: document.getElementById("emailID").value,   
-    city: document.getElementById("cityID").value,   
-    state: document.getElementById("stateID").value,
-    zip: document.getElementById("zipID").value  
+    preferedName  : document.getElementById("nameID").value,   
+    email : document.getElementById("emailID").value,   
+    city  : document.getElementById("cityID").value,   
+    state : document.getElementById("stateID").value,
+    zip : document.getElementById("zipID").value  
   }
   contactArray.push(newContact);
   currentContactIndex = currentContactIndex + 1;
@@ -36,7 +36,7 @@ function viewCurrentContact() {
 
   currentContact = contactArray[currentContactIndex];
   console.log(currentContact);
-  document.getElementById("nameID").value = currentContact.preferredName;   
+  document.getElementById("nameID").value = data.preferredName;   
   document.getElementById("emailID").value = currentContact.email;   
   document.getElementById("cityID").value = currentContact.city;   
   document.getElementById("stateID").value = currentContact.state;
@@ -107,7 +107,7 @@ function keyPressed() {
 
 
 //----------------------------------------------------------------------------
-
+//----------------------------------------------------------------------------
 btn.addEventListener("click", function() {
     btns();
 });
