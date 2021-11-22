@@ -16,7 +16,7 @@ function addContact(){
   state: document.getElementById("stateID").value;
   zip: document.getElementById("zipID").value;  
 
-  
+
 }
 
 function viewCurrentContact() {
@@ -68,7 +68,11 @@ function getPlace(){
     xhr.send(null);
 }
 
+function keyPressed() {
+    console.log('keyPressed()');
 
+    // This type of function should be useful in search as it implements keyPressed.
+}
 
 //----------------------------------------------------------------------------
 
