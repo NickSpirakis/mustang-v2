@@ -16,6 +16,7 @@ var currentContactIndex = 0;
 
 //add
 function addContact(){
+  console.log('addContact() running');
   var newContact = {
     preferredName  : document.getElementById("nameID").value,   
     email : document.getElementById("emailID").value,   
