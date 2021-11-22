@@ -23,7 +23,8 @@ function addContact(){
     state : document.getElementById("stateID").value,
     zip : document.getElementById("zipID").value  
   }
-  contactArray.push(newContact);
+  //contactArray.push(newContact);
+  currentContactIndex.push(newContact);
   currentContactIndex = currentContactIndex + 1;
   viewCurrentContact();
 
@@ -106,7 +107,7 @@ function keyPressed() {
 
 //----//----//----
 //-----------------------------------
-
+/*
 function loadIndex() {
   // Load the Mustang index file.
   var indexRequest = new XMLHttpRequest();
@@ -167,7 +168,7 @@ function loadNextContact(URL) {
 
   contactRequest.send();
 }
-
+*/
 //----------------------------------------------------------------------------
 //----------------------------------------------------------------------------
 
