@@ -15,6 +15,8 @@ function addContact(){
   city: document.getElementById("cityID").value;   
   state: document.getElementById("stateID").value;
   zip: document.getElementById("zipID").value;  
+
+  
 }
 
 function viewCurrentContact() {
