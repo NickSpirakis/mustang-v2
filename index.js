@@ -8,7 +8,19 @@ var contContainer = document.getElementById("contact-info");
 
 //---------------------------------------------------------------------------
 
+//add
+function addContact(){
+  preferedName: document.getElementById("nameID").value;   
+  email: document.getElementById("emailID").value;   
+  city: document.getElementById("cityID").value;   
+  state: document.getElementById("stateID").value;
+  zip: document.getElementById("zipID").value;  
+}
+
 function viewCurrentContact() {
+
+  var htmlString = "";
+
   currentContact = contactArray[currentContactIndex];
   console.log(currentContact);
   document.getElementById("nameID").value = currentContact.preferredName;   
@@ -18,7 +30,10 @@ function viewCurrentContact() {
   document.getElementById("zipID").value = currentContact.zip;  
 
   // Todo: Add additional fields.
+  
   document.getElementById("statusID").innerHTML = "Status: Viewing contact " + (currentContactIndex+1) + " of " + contactArray.length;
+
+  pplContainer.insertAdjacentHTML('beforeend', htmlString);
 }
 
 
