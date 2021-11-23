@@ -61,8 +61,11 @@ function renderFirstName(data){
   ourRequest.open('GET', thisCon);
   ourRequest.onload = function() {
       var ourData = JSON.parse(ourRequest.responseText);
+
+        document.getElementById("cityID").value = ourData.city;
+        document.getElementById("stateID").value = ourData.state;
         document.getElementById("zipID").value = ourData.zip;
-        callZip();
+        
         console.log("data = " + ourData);
    
     };
