@@ -65,6 +65,15 @@
                     <input id="emailID" type="text" value="" size="20">
                 </td>
             </tr>
+
+            <tr>
+                <td>Zip</td>
+                <td>
+                    <input id="zipID" type="text" value="" size="20" onfocus="getPlace()" onblur="callZip()"> 
+                </td>
+            </tr>
+
+
             <tr>
                 <td>City:</td>
                 <td>
@@ -77,12 +86,14 @@
                     <input id="stateID" type="text" value="" size="20" onkeypress="keyPressed()">
                 </td>
             </tr>
+        <!--
             <tr>
                 <td>Zip</td>
                 <td>
-                    <input id="zipID" type="text" value="" size="20" onfocus="getPlace()" onblur="callZip()"> <!--onfocus="getPlace()"-->
+                    <input id="zipID" type="text" value="" size="20" onfocus="getPlace()" onblur="callZip()"> 
                 </td>
             </tr>
+        -->
 
         </table>
 

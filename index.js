@@ -62,9 +62,10 @@ function renderFirstName(data){
   ourRequest.onload = function() {
       var ourData = JSON.parse(ourRequest.responseText);
 
+        document.getElementById("zipID").value = ourData.zip;
         document.getElementById("cityID").value = ourData.city;
         document.getElementById("stateID").value = ourData.state;
-        document.getElementById("zipID").value = ourData.zip;
+        //document.getElementById("zipID").value = ourData.zip;
         
         console.log("data = " + ourData);
    
@@ -84,10 +85,11 @@ function addContact(){
   console.log("addContact() running");
   var newContact = {
     preferredName  : document.getElementById("nameID").value,   
-    email : document.getElementById("emailID").value,   
+    email : document.getElementById("emailID").value,  
+    zip : document.getElementById("zipID").value,  
     city  : document.getElementById("cityID").value,   
-    state : document.getElementById("stateID").value,
-    zip : document.getElementById("zipID").value  
+    state : document.getElementById("stateID").value //,
+    //zip : document.getElementById("zipID").value  
   }
   contactArray.push(newContact);
   //currentContactIndex.push(newContact);
@@ -120,9 +122,10 @@ function viewCurrentContact() {
   console.log(currentContact);
   document.getElementById("nameID").value = currentContact.preferredName;   
   document.getElementById("emailID").value = currentContact.email;   
+  document.getElementById("zipID").value = currentContact.zip;
   document.getElementById("cityID").value = currentContact.city;   
   document.getElementById("stateID").value = currentContact.state;
-  document.getElementById("zipID").value = currentContact.zip;   
+  //document.getElementById("zipID").value = currentContact.zip;   
 
 
 }
