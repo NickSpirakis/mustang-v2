@@ -84,6 +84,6 @@ html, body {
   }
 
   #tableButtons{
-    padding: 100;
-    
+    padding: 150; 
+    margin: 10px;;
   }
