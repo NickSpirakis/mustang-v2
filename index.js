@@ -114,9 +114,12 @@ function getPlace(){
       console.log("result:"+result);
 
       var place = result.split(', ');
+      
+
+      var citycity = place[0];
+
       console.log("city = "+citycity);
       
-      var citycity = place[0];
       if (document.getElementById("cityID").value == "")
           document.getElementById("cityID").value = citycity;
       if (document.getElementById("stateID").value == "")
