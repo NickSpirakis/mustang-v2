@@ -44,6 +44,8 @@ function renderFirstName(data){
     namez = document.getElementById("nameFindID").value;
   }
 
+  var thisCon = "";
+
   for (i = 0; i < data.length; i++) {
     var fname = data[i].Name.split(" ")
     console.log("first name = " + fname[0]);
@@ -51,8 +53,21 @@ function renderFirstName(data){
     if (fname[0]==namez){
       document.getElementById("nameID").value = data[i].Name;
       document.getElementById("emailID").value = data[i].Email;
+      thisCon = data[i].ContactURL;
     }
   }
+
+  var ourRequest = new XMLHttpRequest();
+  ourRequest.open('GET', thisCon);
+  ourRequest.onload = function() {
+      var ourData = JSON.parse(ourRequest.responseText);
+        document.getElementById("zipID").value = data.zip;
+        console.log("data = " + data);
+   
+    };
+  
+  ourRequest.send();
+
 }
 
 //---------------------------------------------------------------------------
