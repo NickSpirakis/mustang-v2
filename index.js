@@ -8,6 +8,15 @@ var contContainer = document.getElementById("contact-info");
 
 
 
+//-------------------------------------------------------------------------
+var personButton = document.getElementById("personButton");
+var personContainer = document.getElementById("specific-info");
+//var namez = "";
+function getPerson(namez = ""){
+  if (namez ==  personContainer.data.firstName){  // data.firstName){
+     
+  }
+}
 
 //---------------------------------------------------------------------------
 
@@ -83,8 +92,8 @@ function next() {
 }
 
 
-
-
+//-------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
 function callZip(){
   getPlace();
 }
@@ -120,73 +129,8 @@ function keyPressed() {
 }
 
 
-//----//----//----
-//-----------------------------------
-/*
-function loadIndex() {
-  // Load the Mustang index file.
-  var indexRequest = new XMLHttpRequest();
-  indexRequest.open('GET', 'https://mustang-index.azurewebsites.net/index.json');
-  indexRequest.onload = function() {
-      console.log("Index JSON:" + indexRequest.responseText);
-      document.getElementById("indexID").innerHTML = indexRequest.responseText;
-      contactIndex = JSON.parse(indexRequest.responseText);
-      for (i=0; i<contactIndex.length; i++) {
-          contactURLArray.push(contactIndex[i].ContactURL);
-      }
-      console.log("ContactURLArray: " + JSON.stringify(contactURLArray));
-      loadContacts();
-  }
-  indexRequest.send();
-}
-
-function loadContacts() {
-  // Clear the current contactArray.
-  contactArray.length = 0;
-  loadingContact = 0;
-
-  // Note that W3C documentation and my experimentation indicate that each XMLHttpRequest callback function must be a 
-  // unique instance of a function. A better implmentation would have had an array of callback functions instead of a 
-  // recursive call to loadNextContact().
-  if (contactURLArray.length > loadingContact) {
-      loadNextContact(contactURLArray[loadingContact]);
-  }
-}
-
-function loadNextContact(URL) {
-  console.log("URL: " + URL);
-  contactRequest = new XMLHttpRequest();
-  contactRequest.open('GET', URL);
-  contactRequest.onload = function() {
-      console.log(contactRequest.responseText);
-      var contact;
-      contact = JSON.parse(contactRequest.responseText);
-      console.log("Contact: " + contact.firstName);
-      contactArray.push(contact);
-
-      document.getElementById("contactsID").innerHTML = JSON.stringify(contactArray);
-
-      document.getElementById("statusID").innerHTML = "Status: Loading " + contact.firstName + " " + contact.lastName;
-
-      loadingContact++;
-      if (contactURLArray.length > loadingContact) {
-          loadNextContact(contactURLArray[loadingContact]);
-      }
-      else {
-          document.getElementById("statusID").innerHTML = "Status: Contacts Loaded (" + contactURLArray.length + ")";
-          viewCurrentContact()
-          console.log(contactArray);
-
-          //Todo: Sort contacts array.
-      }
-  }
-
-  contactRequest.send();
-}
-*/
-//----------------------------------------------------------------------------
-//----------------------------------------------------------------------------
-
+//------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 
 
 btn.addEventListener("click", function() {
@@ -241,8 +185,9 @@ function btns2(URL){
 
   btn2.addEventListener("click", function() {
     contactHelper();
-    
+
     console.log("btn2 hit");
+    
     
   });
 
@@ -269,7 +214,7 @@ function btns2(URL){
 
   function contactHelper() {
     var ourRequest = new XMLHttpRequest();
-    ourRequest.open('GET', 'https://mustang-index.azurewebsites.net/index.json'); //+ pageCounter + '.json');
+    ourRequest.open('GET', 'https://mustang-index.azurewebsites.net/index.json');
     ourRequest.onload = function() {
       var ourData = JSON.parse(ourRequest.responseText);
       //console.log(ourData[0]);
