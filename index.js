@@ -10,12 +10,36 @@ var contContainer = document.getElementById("contact-info");
 
 //-------------------------------------------------------------------------
 var personButton = document.getElementById("personButton");
+
 var personContainer = document.getElementById("specific-info");
-var namez = document.getElementById("nameFindID");
-console.log(urlcont);
+
+var namez = document.getElementById("nameFindID").value;
+
+console.log("names = " + namez);
 function getPerson(){
-  if (namez ==  contContainer.data.firstName){  // data.firstName){
-     viewCurrentContact();
+  //if (namez ==  ourRequest.data[i].firstName){  // data.firstName){
+     //viewCurrentContact();
+  //}
+
+  var ourRequest = new XMLHttpRequest();
+  ourRequest.open('GET', 'https://mustang-index.azurewebsites.net/index.json');
+  ourRequest.onload = function() {
+    var ourData = JSON.parse(ourRequest.responseText);
+    
+      renderFirstName(ourData);
+   
+  };
+  ourRequest.send();
+  
+
+}
+
+function renderFirstName(data){
+  for (i = 0; i < data.length; i++) {
+    var fname = data[i].Name.split(" ")
+    if (fname[0]==namez){
+      document.getElementById("emailID").value = data[i].Email;
+    }
   }
 }
 
