@@ -39,12 +39,17 @@ function getPerson(){
 }
 
 function renderFirstName(data){
+
+  if (document.getElementById("nameFindID")){
+    namez = document.getElementById("nameFindID").value;
+  }
+
   for (i = 0; i < data.length; i++) {
     var fname = data[i].Name.split(" ")
     console.log("first name = " + fname[0]);
-    
+
     if (fname[0]==namez){
-      document.getElementById("emailID").value = data[i].Email;
+      document.getElementById("emailID").value = "Hi" //data[i].Email;
     }
   }
 }
