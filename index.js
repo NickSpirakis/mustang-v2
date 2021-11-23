@@ -13,7 +13,7 @@ var personButton = document.getElementById("personButton");
 var personContainer = document.getElementById("specific-info");
 var namez = document.getElementById("nameFindID");
 function getPerson(){
-  if (namez ==  personContainer.data.firstName){  // data.firstName){
+  if (namez ==  contContainer.data.firstName){  // data.firstName){
      viewCurrentContact();
   }
 }
