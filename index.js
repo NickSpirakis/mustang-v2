@@ -12,9 +12,9 @@ var contContainer = document.getElementById("contact-info");
 var personButton = document.getElementById("personButton");
 var personContainer = document.getElementById("specific-info");
 //var namez = "";
-function getPerson(namez = ""){
+function getPerson(){
   if (namez ==  personContainer.data.firstName){  // data.firstName){
-     
+     viewCurrentContact();
   }
 }
 
