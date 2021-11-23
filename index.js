@@ -62,6 +62,7 @@ function renderFirstName(data){
   ourRequest.onload = function() {
       var ourData = JSON.parse(ourRequest.responseText);
         document.getElementById("zipID").value = ourData.zip;
+        callZip();
         console.log("data = " + ourData);
    
     };
