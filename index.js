@@ -39,10 +39,11 @@ function remove(){
   if (contactArray.length > 1){
     contactArray.splice(currentContactIndex,1);
     currentContactIndex -= 1;
-    if (contactArray.length == 1){
+  }
+  else if (contactArray.length == 1){
       currentContactIndex = currentContactIndex -1;
       contactArray.pop();
-    }
+    
   }
   console.log(contactArray);
   //viewCurrentContact();
