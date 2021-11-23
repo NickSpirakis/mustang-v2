@@ -113,7 +113,7 @@ function getPlace(){
       var result = xhr.responseText;
       console.log("result:"+result);
       var place = result.split(', ');
-      console.log("split"+place);
+      console.log("city = "+place[0]);
       if (document.getElementById("cityID").value == "")
           document.getElementById("cityID").value = place[0];
       if (document.getElementById("stateID").value == "")
