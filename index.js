@@ -37,10 +37,10 @@ function remove(){
   var contactArray2 = [];
   console.log("removeContact() Running");
   if (contactArray.length > 1){
-    contactArray2 = contactArray.splice(currentContactIndex,1);
+    contactArray.splice(currentContactIndex,1);
     currentContactIndex -= 1;
   }
-  console.log(contactArray2);
+  console.log(contactArray);
   viewCurrentContact();
 }
 
