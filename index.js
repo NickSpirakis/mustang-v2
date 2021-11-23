@@ -112,10 +112,13 @@ function getPlace(){
     if (xhr.readyState == 4 && xhr.status == 200) {
       var result = xhr.responseText;
       console.log("result:"+result);
+
       var place = result.split(', ');
-      console.log("city = "+place[0]);
+      console.log("city = "+citycity);
+      
+      var citycity = place[0];
       if (document.getElementById("cityID").value == "")
-          document.getElementById("cityID").value = place[0];
+          document.getElementById("cityID").value = citycity;
       if (document.getElementById("stateID").value == "")
           document.getElementById("stateID").value = place[1];
       }
