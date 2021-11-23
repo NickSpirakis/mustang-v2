@@ -108,6 +108,7 @@ function getPlace(){
 
   // Register the embedded handler function
   xhr.onreadystatechange = function() {
+
     if (xhr.readyState == 4 && xhr.status == 200) {
       var result = xhr.responseText;
       console.log("result:"+result);
@@ -118,7 +119,7 @@ function getPlace(){
           document.getElementById("stateID").value = place[1];
       }
     }
-    xhr.open("GET", "getCityState.php?zip=" + zip);
+    xhr.open("GET", "zip-to-city-state.php?zip=" + zip);
     xhr.send(null);
 }
 
