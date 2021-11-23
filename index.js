@@ -44,7 +44,7 @@ function remove(){
     }
   }
   console.log(contactArray);
-  viewCurrentContact();
+  //viewCurrentContact();
 }
 
 function viewCurrentContact() {
