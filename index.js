@@ -36,8 +36,8 @@ function addContact(){
 function remove(){
   console.log("removeContact() Running");
   if (contactArray.length > 1){
-    //contactArray = contactArray.splice(currentContactIndex,1);
-    contactArray = contactArray.pop();
+    contactArray = contactArray.splice(currentContactIndex,1);
+    //contactArray = contactArray.pop();
     currentContactIndex -= 1;
   }
   console.log(contactArray);
