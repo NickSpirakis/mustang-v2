@@ -13,7 +13,11 @@ var personButton = document.getElementById("personButton");
 
 var personContainer = document.getElementById("specific-info");
 
-var namez = document.getElementById("nameFindID").value;
+var namez = "";
+
+if (document.getElementById("nameFindID")){
+  namez = document.getElementById("nameFindID").value;
+}
 
 console.log("names = " + namez);
 function getPerson(){
