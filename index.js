@@ -34,12 +34,13 @@ function addContact(){
 }
 
 function remove(){
+  var contactArray2 = [];
   console.log("removeContact() Running");
   if (contactArray.length > 1){
-    contactArray = contactArray.splice(currentContactIndex,0);
+    contactArray2 = contactArray.splice(currentContactIndex,1);
     currentContactIndex -= 1;
   }
-  console.log(contactArray);
+  console.log(contactArray2);
   viewCurrentContact();
 }
 
