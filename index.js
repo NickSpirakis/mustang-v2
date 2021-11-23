@@ -49,6 +49,7 @@ function renderFirstName(data){
     console.log("first name = " + fname[0]);
 
     if (fname[0]==namez){
+      document.getElementById("nameID").value = data[i].Name;
       document.getElementById("emailID").value = data[i].Email;
     }
   }
